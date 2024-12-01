@@ -10,11 +10,9 @@ def extract_page_data(page_lines):
 
     # Extract Notice Address
     notice_address = extract_notice_address(complete_text)
-    print(notice_address)
     if notice_address:
         page_data["notice_address"] = notice_address
         address_components = extract_address_components(notice_address)
-        print("address component: ", address_components)
         page_data.update(address_components)
 
     # Extract other page-specific data
@@ -64,7 +62,7 @@ def extract_address_components(notice_address):
 
     # If state is missing, manually check for that and adjust the regex accordingly
     if not state and len(notice_address.split()) > 2:
-        print("state tidak ada")
+
         # If the state is missing, we still try to capture street, suburb, and postcode
         missing_state_pattern = r"(?P<street_address>(?:\d{1,2}/?\d*\s)?(?:[A-Za-z0-9\s&/-]+(?:\s(?:Road|Rd|Street|Ave|Avenue|Drive|Blvd|Lane|Court|Cres|St|Terrace|PO Box|Box))?))\s(?P<suburb>[A-Za-z\s]+)\s(?P<postcode>\d{4})"
         match_missing_state = re.search(missing_state_pattern, notice_address)
@@ -172,7 +170,6 @@ if __name__=="__main__":
     pdf_path = "./source/Source Data.pdf"
     pdf_data = extract_pdf_data(pdf_path)
     create_xlsx(pdf_data)
-    print(pdf_data)
 
 
 

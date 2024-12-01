@@ -52,10 +52,10 @@ def create_xlsx(pdf_data):
 
     # Save the modified Excel file
     wb.save('Data_from_pdf.xlsx')
+    print(f"Data_from_pdf.xlsx has been created.")
     # Delete the file
 
     if os.path.exists(file_path):
         os.remove(file_path)
-        print(f"{file_path} has been deleted.")
     else:
-        print(f"{file_path} does not exist.")
+        pass
