@@ -33,5 +33,5 @@ A Python-based tool for extracting and organizing property-related information f
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/property-data-extractor.git
-   cd property-data-extractor
+   git clone https://github.com/Ikhsan121/Extract_data_pdf_to_excel.git
+   cd Extract_data_pdf_to_excel
